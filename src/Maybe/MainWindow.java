@@ -145,7 +145,6 @@ public class MainWindow
             study.setOnAction(new EventHandler<ActionEvent>() {
                 public void handle(ActionEvent event)
                 {
-                    student.moveOut();
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setHeaderText(null);
                     if(student.st == false)
@@ -165,7 +164,6 @@ public class MainWindow
            work.setOnAction(new EventHandler<ActionEvent>() {
                 public void handle(ActionEvent event)
                 {
-                    worker.moveOut();
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setHeaderText(null);
                     if(worker.wo == false)
