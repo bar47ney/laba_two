@@ -1,6 +1,8 @@
-/**
+package Maybe; /**
  * Created by Сергей on 30.03.2019.
  */
+
+
 
 import javafx.application.Application;
 import javafx.stage.Stage;

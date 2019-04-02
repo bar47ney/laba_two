@@ -1,6 +1,10 @@
+package Maybe;
+
 /**
  * Created by Сергей on 30.03.2019.
  */
+
+
 public class Human
 {
     private String firstName;
