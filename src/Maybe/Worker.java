@@ -16,9 +16,26 @@ public class Worker extends Human
     {
         return "Работаю!";
     }
+    public void copy(Worker workk)
+    {
+        this.setFirstName(workk.getFirstName());
+        this.setLastName(workk.getLastName());
+        this.setStatus(workk.getStatus());
+        this.setActivity(workk.getActivity());
+    }
     public String work_no()
     {
         return "Не работаю!";
     }
-    public boolean wo = false;
+    public void changeStatus()
+    {
+        if(this.getBoolStatus() == true)
+        {
+            this.setStatus("Работаю");
+        }
+        else
+        {
+            this.setStatus("Не работаю");
+        }
+    }
 }

@@ -34,4 +34,11 @@ public class Address
     {
         this.house=house;
     }
+    public void copy(Address adr)
+    {
+        this.setStreet(adr.getStreet());
+        this.setHouse(Integer.parseInt(adr.getHouse()));
+        this.setFlat(Integer.parseInt(adr.getFlat()));
+
+    }
 }

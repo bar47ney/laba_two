@@ -19,5 +19,22 @@ public class Student extends Human
     {
         return "Не учусь!";
     }
-    public boolean st = false;
+    public void copy(Student styd)
+    {
+        this.setFirstName(styd.getFirstName());
+        this.setLastName(styd.getLastName());
+        this.setStatus(styd.getStatus());
+        this.setActivity(styd.getActivity());
+    }
+    public void changeStatus()
+    {
+        if(this.getBoolStatus() == true)
+        {
+            this.setStatus("Учусь");
+        }
+        else
+        {
+            this.setStatus("Не учусь");
+        }
+    }
 }
