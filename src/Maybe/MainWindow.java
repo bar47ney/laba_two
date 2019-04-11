@@ -123,7 +123,7 @@ public class MainWindow
                 public void handle(ActionEvent event)
                 {
                     ChangeInfo windowChange = new ChangeInfo();
-                    windowChange.display(primaryStage, sl);
+                    windowChange.display(primaryStage, sl, student, wl, worker);
                 }
             });
 

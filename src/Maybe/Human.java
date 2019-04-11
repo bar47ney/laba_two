@@ -62,4 +62,8 @@ public class Human
     {
         return this.bool_st = bool_st;
     }
+    public Address getAddress()
+    {
+        return address ;
+    }
 }

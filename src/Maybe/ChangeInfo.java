@@ -15,6 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Created by Сергей on 09.04.2019.
@@ -22,14 +23,14 @@ import java.util.ArrayList;
 public class ChangeInfo
 {
     private int counter;
-    public void display(Stage primaryStage, ArrayList<Student> sl)
+    private int i=0;
+    public void display(Stage primaryStage, ArrayList<Student> sl, Student student, ArrayList<Worker> wl, Worker worker)
     {
-
         Stage getInfoStage = new Stage();
         getInfoStage.setResizable(false);
         BorderPane root = new BorderPane();
 
-        Scene scene = new Scene(root,400,400);
+        Scene scene = new Scene(root,400,300);
         GridPane gridpane = new GridPane();
         gridpane.setPadding(new Insets(10));
         gridpane.setHgap(5);
@@ -37,32 +38,100 @@ public class ChangeInfo
         getInfoStage.initModality(Modality.WINDOW_MODAL);
         getInfoStage.initOwner(primaryStage);
 
-        for(int i = 0; i < 2; i++)
-        {
-            ColumnConstraints column = new ColumnConstraints();
-            column.setPercentWidth(100/2.0);
-            gridpane.getColumnConstraints().add(column);
-        }
-
         Label label = new Label("Номер сохраняемого или изменяемого элемента");
         gridpane.add(label, 0, 0);
 
         TextField numberOfElementListField = new TextField();
-        numberOfElementListField.setPrefSize(40,40);
-        gridpane.add(numberOfElementListField, 0, 1);
+        numberOfElementListField.setPrefSize(20,30);
+        gridpane.add(numberOfElementListField, 0, 2);
 
-        Button saveElement = new Button("Считать");
-        saveElement.setPrefSize(80,30);
-        gridpane.add(saveElement,0,2);
+        Button changeElementWorker = new Button("Поменять рабочего");
+        changeElementWorker.setPrefSize(200,30);
+        gridpane.add(changeElementWorker,0,1);
 
-        Button changeElement = new Button("Поменять");
-        changeElement.setPrefSize(80,30);
-        gridpane.add(changeElement,1,2);
+        Button changeElementStudent = new Button("Поменять студента");
+        changeElementStudent.setPrefSize(200,30);
+        gridpane.add(changeElementStudent,0,3);
+
+
+
+        changeElementStudent.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event)
+            {
+                counter = Integer.parseInt(numberOfElementListField.getText());
+                Iterator<Student> iter = sl.iterator();
+                Student change_student = new Student();
+                change_student.moveIn();
+                while(i != counter)
+                {
+                    change_student = iter.next();
+                    i++;
+                }
+                i = 0;
+                iter = sl.iterator();
+                while(i != counter)
+                {
+                    change_student.address = iter.next().getAddress();
+                    i++;
+                }
+                change_student.copy(student);
+                if(student.address != null)
+                {
+                    change_student.moveIn();
+                    change_student.address.copy(student.address);
+                }
+                else
+                {
+                    change_student.address = null;
+                }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Поменял!");
+                alert.showAndWait();
+                getInfoStage.close();
+            }
+        });
+
+        changeElementWorker.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event)
+            {
+                counter = Integer.parseInt(numberOfElementListField.getText());
+                Iterator<Worker> iter = wl.iterator();
+                Worker change_worker = new Worker();
+                change_worker.moveIn();
+                while(i != counter)
+                {
+                    change_worker = iter.next();
+                    i++;
+                }
+                i = 0;
+                iter = wl.iterator();
+                while(i != counter)
+                {
+                    change_worker.address = iter.next().getAddress();
+                    i++;
+                }
+                change_worker.copy(worker);
+                if(worker.address != null)
+                {
+                    change_worker.moveIn();
+                    change_worker.address.copy(worker.address);
+                }
+                else
+                {
+                    change_worker.address = null;
+                }
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Поменял!");
+                alert.showAndWait();
+                getInfoStage.close();
+            }
+        });
 
         root.setCenter(gridpane);
         getInfoStage.setScene(scene);
         getInfoStage.show();
-
     }
 
 }
