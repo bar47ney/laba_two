@@ -38,7 +38,7 @@ public class StudentReportWindow
         Label label = new Label(student.study());
         gridpane.add(label,0,0);
 
-        if(student.getBoolStatus() == false)
+        if(student.isBoolStatus() == false)
         {
             label = new Label(student.study_no());
         }

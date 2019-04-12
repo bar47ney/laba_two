@@ -11,7 +11,7 @@ public class Human
     private String lastName;
     private String status;
     private String activity;
-    private boolean bool_st = false;
+    private boolean boolSt = false;
     Address address;
     public void moveIn()
     {
@@ -46,9 +46,9 @@ public class Human
     {
         this.status = status;
     }
-    public boolean getBoolStatus()
+    public boolean isBoolStatus()
     {
-        return bool_st;
+        return boolSt;
     }
     public String getActivity()
     {
@@ -58,9 +58,9 @@ public class Human
     {
         this.activity=activity;
     }
-    public boolean setBoolStatus(boolean bool_st)
+    public boolean setBoolStatus(boolean boolSt)
     {
-        return this.bool_st = bool_st;
+        return this.boolSt = boolSt;
     }
     public Address getAddress()
     {

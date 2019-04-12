@@ -41,13 +41,13 @@ public class WorkerReportWindow
         Label label = new Label(worker.work());
         gridPane.add(label,0,0);
 
-        if(worker.getBoolStatus() == false)
+        if(worker.isBoolStatus() == false)
         {
-            label = new Label(worker.work_no());
+            label = new Label(worker.workNo());
         }
         else
         {
-            label = new Label(worker.work_yes());
+            label = new Label(worker.workYes());
         }
 
         gridPane.add(label,1,0);

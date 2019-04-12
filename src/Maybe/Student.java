@@ -28,7 +28,7 @@ public class Student extends Human
     }
     public void changeStatus()
     {
-        if(this.getBoolStatus() == true)
+        if(this.isBoolStatus() == true)
         {
             this.setStatus("Учусь");
         }

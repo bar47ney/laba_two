@@ -232,7 +232,7 @@ public class MainWindow
                 {
                     student.setFirstName(studentFirstNameField.getText());
                     student.setLastName(studentLastNameField.getText());
-                    if(student.getBoolStatus() == false)
+                    if(student.isBoolStatus() == false)
                     {
                         student.setActivity("Нет учёбы");
                     }
@@ -251,7 +251,7 @@ public class MainWindow
                 {
                     worker.setFirstName(workerFirstNameField.getText());
                     worker.setLastName(workerLastNameField.getText());
-                    if(worker.getBoolStatus() == false)
+                    if(worker.isBoolStatus() == false)
                     {
                         worker.setActivity("Нет работы");
                     }
@@ -269,7 +269,7 @@ public class MainWindow
                 {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setHeaderText(null);
-                    if(student.getBoolStatus() == false)
+                    if(student.isBoolStatus() == false)
                     {
                         alert.setContentText(student.study_yes());
                         student.setBoolStatus(true);
@@ -290,15 +290,15 @@ public class MainWindow
                 {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setHeaderText(null);
-                    if(worker.getBoolStatus() == false)
+                    if(worker.isBoolStatus() == false)
                     {
-                        alert.setContentText(worker.work_yes());
+                        alert.setContentText(worker.workYes());
                         worker.setBoolStatus(true);
                         worker.setStatus("Работаю");
                     }
                     else
                     {
-                        alert.setContentText(worker.work_no());
+                        alert.setContentText(worker.workNo());
                         worker.setBoolStatus(false);
                         worker.setStatus("Не работаю");
                     }

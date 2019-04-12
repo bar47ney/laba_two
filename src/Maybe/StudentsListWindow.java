@@ -104,32 +104,6 @@ public class StudentsListWindow
 
             }
 
-       /* if(student.address!=null)
-        {
-            label = new Label("Улица");
-            gridpane.add(label,0,3);
-
-            Label streetLabel = new Label(student.address.getStreet());
-            gridpane.add(streetLabel,1,3);
-
-            label = new Label("Дом");
-            gridpane.add(label,0,4);
-
-            Label houseLabel = new Label(student.address.getHouse());
-            gridpane.add(houseLabel,1,4);
-
-            label = new Label("Квартира");
-            gridpane.add(label,0,5);
-
-            Label flatLabel = new Label(student.address.getFlat());
-            gridpane.add(flatLabel,1,5);
-        }
-        else
-        {
-            label = new Label("Не заселён");
-            gridpane.add(label,0,3);
-        }*/
-
         root.setCenter(gridpane);
         getInfoStage.setScene(scene);
         getInfoStage.show();

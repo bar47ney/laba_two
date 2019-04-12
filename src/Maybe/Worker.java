@@ -12,7 +12,7 @@ public class Worker extends Human
     {
         return "Рабочий";
     }
-    public String work_yes()
+    public String workYes()
     {
         return "Работаю!";
     }
@@ -23,13 +23,13 @@ public class Worker extends Human
         this.setStatus(workk.getStatus());
         this.setActivity(workk.getActivity());
     }
-    public String work_no()
+    public String workNo()
     {
         return "Не работаю!";
     }
     public void changeStatus()
     {
-        if(this.getBoolStatus() == true)
+        if(this.isBoolStatus() == true)
         {
             this.setStatus("Работаю");
         }
